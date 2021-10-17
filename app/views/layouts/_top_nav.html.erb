@@ -30,6 +30,24 @@
             About Us
           <% end %>
         </li>
+        <% if current_user %>
+          <li>
+            <%= link_to logout_path do %>
+              <%= current_user.fname %> | Logout
+            <% end %>
+          </li>
+        <% else %>
+          <li>
+            <%= link_to register_path do %>
+              Register
+            <% end %>
+          </li>
+          <li>
+          <%= link_to login_path do %>
+              Login
+            <% end %>
+          </li>
+        <% end %>
       </ul>
       <ul class="nav navbar-nav navbar-right">
        <li class="dropdown">
